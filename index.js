@@ -26,9 +26,13 @@ app.post("/sms", (req, res) =>{
         sResponse += "<Message>";
         sResponse += aReply[n];
         sResponse += "</Message>";
-    }
+    }     
     res.end(sResponse + "</Response>");
 
+    if (sResponse.includes("leave")){
+        console.log('stopping the server.....');
+        process.exit(0);
+    } 
 });
 
 var port = process.env.PORT || parseInt(process.argv.pop()) || 3000;

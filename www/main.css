@@ -4,13 +4,13 @@
     margin: 0;
     clear: both;
     outline: none !important;
-    color: black;
-    background-color: white;
-    font-family: sans-serif;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.863);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html{
-    background-color: #f3f5f6;
+    background-color: #c4e4f5;
 }
 
 main{
@@ -22,21 +22,21 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px 2px #6d6d6d;
+    border: 2px solid blue;
+    border-radius: 19px;
+    box-shadow: 3px 2px 0px 2px #7a78f5;
 }
 
 #message-container,
 #controls{
-    border-right: 20px solid #121212;
-    border-left: 20px solid #121212;
+    border-right: 20px solid darkblue;
+    border-left: 20px solid darkblue;
 }
 
 #input-splitter{
     width: calc(100% - 40px);
     margin: -2px auto 0px auto;
-    border-top: 2px solid grey;
+    border-top: 2px double darkblue;
     position: relative;
 }
 
@@ -46,10 +46,10 @@ main{
 }
 #messages{
     margin: 0;
-    padding: 10px;
-    border-radius: 20px;
-    max-height: 100%;
-    min-height: 50px;
+    padding: 11px;
+    border-radius: 21px;
+    max-height: 99%;
+    min-height: 51px;
     overflow-y: auto;
 }
 #messages li{
@@ -59,9 +59,9 @@ main{
 }
 #messages li p{
     margin: 0;
-    max-width: 60%;
-    border-radius: 5px;
-    padding: 5px 10px;
+    max-width: 61%;
+    border-radius: 4px;
+    padding: 4px 9px;
     display: inline-block;
     text-align: left;
     position: relative;
@@ -72,13 +72,13 @@ main{
     position: absolute;
 }
 #messages li p::before{
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     bottom: -5px;
     transform: rotate(45deg);
 }
 #messages li p::after{
-    width: 15px;
+    width: 16px;
     height: 7px;
     bottom: -7px;
     background-color: white;
@@ -86,27 +86,27 @@ main{
 
 .from-server p{
     color: white;
-    background-color: #0074D9;
+    background-color: #5f538b;
     border-bottom-left-radius: 0 !important;
 }
 .from-server p::before{
     left: -5px;
-    background-color: #0074D9;
+    background-color: #5f538b;
 }
 .from-server p::after{
-    left: -7px;
+    left: -6px;
 }
 .from-user{
     text-align: right;
 }
 .from-user p{
-    color: black;
-    background-color: #2ECC40;
+    color: white;
+    background-color: #2262f8;
     border-bottom-right-radius: 0 !important;
 }
 .from-user p::before{
     right: -5px;
-    background-color: #2ecc40;
+    background-color: #2262f8;
 }
 .from-user p::after{
     right: -7px;
@@ -120,7 +120,7 @@ main{
 
 #send{
     border: none;
-    border-left: 2px solid grey;
+    border-left: 2px double rgb(206, 202, 202);
     height: 100%;
     padding: 5px 10px;
     cursor: pointer;
@@ -150,7 +150,7 @@ main{
     width: calc(100% - 43px);
     height: 100%;
     border: none;
-    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 19px;
     padding: 10px 20px;
 }
 
@@ -158,7 +158,7 @@ main{
     position: absolute;
     top: 90px;
     left: 20px;
-    border: 1px solid black;
+    border: 1px double red;
     padding: 2px 5px;
     margin-left: -1px;
     border-top-right-radius: 5px;
@@ -179,7 +179,7 @@ main{
 #phone-top,
 #phone-bottom{
     height: 80px;
-    background-color: #121212;
+    background-color: darkblue;
 }
 
 #phone-top{
@@ -200,14 +200,15 @@ main{
     left: 35%;
     border-radius: 10px;
     background-color: black;
+
 }
 #phone-top::after{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     right: 20%;
-    border: 8px solid black;
-    background-color: #1a1a1a;
+    border: 7px solid black;
+    background-color: #1a1919;
 }
 
 #phone-bottom{
