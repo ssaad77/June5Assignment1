@@ -5,14 +5,16 @@ const GameState = Object.freeze({
     CHECK: Symbol("check"),
     QUIT: Symbol("quit"),
 });
-const choices = ["car", "plane","computer", "mobile", "tv", "train", "house"];
+const choices = ["car", "banana", "plane","computer", "watermelon", "mobile", "tv", "train", "bicycle"];
 const car = ["Has four wheels", "has steering wheel", "has a hood"];
+const banana = ["Fruit with yellow color", "Fruit before grow has a green color", "Has a cover"];
 const plane = ["Has wheels between 5-16", "has speed between 260-890 km", "has a Tail"];
 const computer = ["Has a screen", "has a lot of key", "has an operating system"];
+const watermelon = ["Fruit with green color from outside", "with a red color from inside", "with or with out seeds"];
 const mobile = ["Has a tiny keyboard", "has a flash", "has a timer"];
 const tv = ["Has a remote control", "has a channels ", "has a square chape"];
 const train = ["safe transport mean", "fast transport", "has a hood"];
-const  house = ["Has four wheels", "has steering wheel", "has a hood"];
+const bicycle = ["Has two wheels", "has steering ", "speed between 5 - 130 km"];
 
 module.exports = class Game{
     constructor(){
@@ -20,6 +22,7 @@ module.exports = class Game{
         this.whichObject = 0;
         this.numCorrectAnswer = 0;
         this.numIncorrectAnswer = 0;
+        this.totalAnswer = 0;
     }
     
     makeAMove(sInput)
@@ -27,7 +30,9 @@ module.exports = class Game{
         let sReply = "";
         switch(this.stateCur){
             case GameState.WELCOMING:
-                sReply = "Hi, let's have some fun!! How about I SPY!!,type Go ";
+                sReply = "Hi, you have 3 clues for each  question ,"+
+                " after each incorrect answer type go,"+
+                "let's have some fun!!" +"How about I SPY!!, type Go";
                 this.stateCur = GameState.PLAY;
                 break;
             case GameState.PLAY:
@@ -36,28 +41,34 @@ module.exports = class Game{
                     sReply = car[nChoice];
                 }
                 else if(this.whichObject == 1){
-                    sReply = plane[nChoice];
+                    sReply = banana[nChoice];
                 }
                 else if(this.whichObject == 2){
-                    sReply = computer[nChoice];
+                    sReply = plane[nChoice];
                 }
                 else if(this.whichObject == 3){
-                    sReply = mobile[nChoice];
+                    sReply = computer[nChoice];
                 }
                 else if(this.whichObject == 4){
-                    sReply = tv[nChoice];
+                    sReply = watermelon[nChoice];
                 }
                 else if(this.whichObject == 5){
-                    sReply = train[nChoice];
+                    sReply = mobile[nChoice];
                 }
                 else if(this.whichObject == 6){
-                    sReply = house[nChoice];
+                    sReply = tv[nChoice];
+                }
+                else if(this.whichObject == 7){
+                    sReply = train[nChoice];
+                }
+                else if(this.whichObject == 8){
+                    sReply = bicycle[nChoice];
                 }
                 this.stateCur = GameState.ANSWER;
                 break;
             case GameState.ANSWER:
                 var trueAnswer = 0
-                if(sInput.toLowerCase().match(choices[this.whichObject])){
+                if(sInput.toLowerCase() == (choices[this.whichObject])){
                     trueAnswer = 1;
                 }
                 else{
@@ -77,22 +88,26 @@ module.exports = class Game{
                 }
                 break;
             case GameState.CHECK:
-                if(sInput.toLowerCase().match("y")){
+                var totalAnswer = 0
+
+                if(sInput.toLowerCase() == ("y")){
                     sReply = " glad you want to play more :) \n type Go";
                     this.stateCur = GameState.PLAY;
                 }
-                else if(sInput.toLowerCase().match("n")){
-                    sReply = "Sorry to see you leave :( \n you have answer " +this.numCorrectAnswer
-                    + " correct answers, and " +this.numIncorrectAnswer + " incorrect answers";
-                   this.stateCur = GameState.Quit;
-                   
+                else if(sInput.toLowerCase() == ("n")){
+                    totalAnswer =(this.numCorrectAnswer + this.numIncorrectAnswer);
+                    sReply = "Sorry to see you leave :( \n you have answer " 
+                    + this.numCorrectAnswer+ "correct answers, and"
+                    +this.numIncorrectAnswer + " incorrect answers ,"
+                    + "your percentage is "+" "+
+                   (this.numCorrectAnswer * 100) / totalAnswer +" "+ "%";
+                   this.stateCur = GameState.Quit; 
                 break;
                 } 
                 break;
             case GameState.QUIT:
                 sReply = "disabled"
-                this.stateCur = GameState.Quit 
-                     
+                this.stateCur = GameState.Quit     
         }
         return([sReply]);    
     }
