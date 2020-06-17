@@ -23,8 +23,7 @@ module.exports = class Game{
         this.numCorrectAnswer = 0;
         this.numIncorrectAnswer = 0;
         this.totalAnswer = 0;
-    }
-    
+    }   
     makeAMove(sInput)
     {
         let sReply = "";
@@ -83,13 +82,11 @@ module.exports = class Game{
                 if(trueAnswer == 0){
                     sReply = "Wrong Answer";
                     this.numIncorrectAnswer += 1;
-
                     this.stateCur = GameState.PLAY;
                 }
                 break;
             case GameState.CHECK:
                 var totalAnswer = 0
-
                 if(sInput.toLowerCase() == ("y")){
                     sReply = " glad you want to play more :) \n type Go";
                     this.stateCur = GameState.PLAY;
