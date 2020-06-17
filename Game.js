@@ -6,15 +6,15 @@ const GameState = Object.freeze({
     QUIT: Symbol("quit"),
 });
 const choices = ["car", "banana", "plane","computer", "watermelon", "mobile", "tv", "train", "bicycle"];
-const car = ["Has four wheels", "has steering wheel", "has a hood"];
-const banana = ["Fruit with yellow color", "Fruit before grow has a green color", "Has a cover"];
-const plane = ["Has wheels between 5-16", "has speed between 260-890 km", "has a Tail"];
-const computer = ["Has a screen", "has a lot of key", "has an operating system"];
-const watermelon = ["Fruit with green color from outside", "with a red color from inside", "with or with out seeds"];
-const mobile = ["Has a tiny keyboard", "has a flash", "has a timer"];
-const tv = ["Has a remote control", "has a channels ", "has a square chape"];
-const train = ["safe transport mean", "fast transport", "has a hood"];
-const bicycle = ["Has two wheels", "has steering ", "speed between 5 - 130 km"];
+const car = ["Has four wheels ?", "has steering wheel ?", "has a hood ?"];
+const banana = ["Fruit with yellow color ?", "Fruit before grow has a green color ?", "Has a cover ?"];
+const plane = ["Has wheels between 5-16 ?", "has speed between 260-890 km ?", "has a Tail ?"];
+const computer = ["Has a screen ?", "has a lot of key ?", "has an operating system ?"];
+const watermelon = ["Fruit with green color from outside ?", "with a red color from inside ?", "with or with out seeds ?"];
+const mobile = ["Has a tiny keyboard ?", "has a flash ?", "has a timer ?"];
+const tv = ["Has a remote control ?", "has a channels ?", "has a square chape ?"];
+const train = ["safe transport mean ?", "fast transport ?", "has a hood ?"];
+const bicycle = ["Has two wheels ?", "has steering ?", "speed between 5 - 130 km ?"];
 
 module.exports = class Game{
     constructor(){
