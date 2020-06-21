@@ -5,16 +5,18 @@ const GameState = Object.freeze({
     CHECK: Symbol("check"),
     QUIT: Symbol("quit"),
 });
-const choices = ["car", "banana", "plane","computer", "watermelon", "mobile", "tv", "train", "bicycle"];
+const choices = ["car", "banana", "plane","computer", "watermelon", "mobile", "tv", "train", "bicycle", "microwave"];
 const car = ["Has four wheels ?", "has steering wheel ?", "has a hood ?"];
-const banana = ["Fruit with yellow color ?", "Fruit before grow has a green color ?", "Has a cover ?"];
-const plane = ["Has wheels between 5-16 ?", "has speed between 260-890 km ?", "has a Tail ?"];
+const banana = ["Fruit grow in a bunch ?", "Fruit started green and then turned to yellow ?",
+                "fruit yellow or Black and yellow color ?"];
+const plane = ["Has wheels between 5-16 ?", "it's speed between 260-890 km ?", "has a Tail ?"];
 const computer = ["Has a screen ?", "has a lot of key ?", "has an operating system ?"];
-const watermelon = ["Fruit with green color from outside ?", "with a red color from inside ?", "with or with out seeds ?"];
-const mobile = ["Has a tiny keyboard ?", "has a flash ?", "has a timer ?"];
+const watermelon = ["Fruit with green color from outside ?", "fruit with a red color from inside ?", "fruit with or without seeds ?"];
+const mobile = ["Has a tiny keyboard ?", "has a flash ?", "you can talk with it ?"];
 const tv = ["Has a remote control ?", "has a channels ?", "has a square chape ?"];
-const train = ["safe transport mean ?", "fast transport ?", "has a hood ?"];
-const bicycle = ["Has two wheels ?", "has steering ?", "speed between 5 - 130 km ?"];
+const train = ["a safe transport mean ?", "fast public transport ?", "public transport between cities ?"];
+const bicycle = ["Has two wheels ?", "has steering ?", "it's speed between 5 - 130 km ?"];
+const microwave = ["heat's up food ?", "Home device square shape ?", "Home device Had a timer ?"];
 
 module.exports = class Game{
     constructor(){
@@ -63,6 +65,9 @@ module.exports = class Game{
                 else if(this.whichObject == 8){
                     sReply = bicycle[nChoice];
                 }
+                else if(this.whichObject == 9){
+                    sReply = microwave[nChoice];
+                }
                 this.stateCur = GameState.ANSWER;
                 break;
             case GameState.ANSWER:
@@ -94,10 +99,10 @@ module.exports = class Game{
                 else if(sInput.toLowerCase() == ("n")){
                     totalAnswer =(this.numCorrectAnswer + this.numIncorrectAnswer);
                     sReply = "Sorry to see you leave :( \n you have answer " 
-                    + this.numCorrectAnswer+ "correct answers, and"
+                    + this.numCorrectAnswer+ "correct answers, and "
                     +this.numIncorrectAnswer + " incorrect answers ,"
                     + "your percentage is "+" "+
-                   (this.numCorrectAnswer * 100) / totalAnswer +" "+ "%";
+                   ((this.numCorrectAnswer * 100) / totalAnswer).toFixed(2) +" "+ "%";
                    this.stateCur = GameState.Quit; 
                 break;
                 } 

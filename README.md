@@ -8,17 +8,17 @@ A chatbot written in es6 and vs6 for twilio and testing on the web. The importan
 
 computer will give you 3 clues for each question.
 
-after each clues you have to answer, and computer will till you your answer is write or wrong. 
+You have to answer each clue , Then you will be notified if your answer is correct or not 
 
 after each incorrect answer you need to type go or any thing to get the clue
 
-after each correct answer you can continue play by typing "Y" or "N" to exit the Game,
+after each correct answer you can continue to play by typing "Y" or "N" to exit the Game,
 
-if you type N to exit the game you will see how many time your answer  was write and
+if you type N to exit the game you will see how many times your answer  was write and
 
 how many time your answer was wrong and what is your percentage then server will stop.
 
-enjoy your time.
+Enjoy your time.
 
 
 
