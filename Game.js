@@ -31,7 +31,7 @@ module.exports = class Game{
         let sReply = "";
         switch(this.stateCur){
             case GameState.WELCOMING:
-                sReply = "Hi, you have 3 clues for each  question ,"+
+                sReply = "Hi, you have 3 clues for each question ,"+
                 " after each incorrect answer type go,"+
                 "let's have some fun!!" +"How about I SPY !!, type Go";
                 this.stateCur = GameState.PLAY;
