@@ -2,6 +2,8 @@
 
 I got the user interface for the web from a reference up .
 
+This program need Visual Studio Code
+
 A chatbot written in es6 and vs6 for twilio and testing on the web. The important files are index.js and game.js.
 
 -----The Game name is I SPY-----
